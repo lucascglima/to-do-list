@@ -10,7 +10,7 @@
       color="indigo lighten-1 rounded-0 px-1" 
       dark
     >
-      <router-link :to="'/'">
+      <router-link :to="'/'" class="text-decoration-none">
         <v-toolbar-title 
           class="white--text"
         >
@@ -18,7 +18,7 @@
         </v-toolbar-title>
       </router-link>
       <v-spacer></v-spacer>
-      <router-link :to="'/search'">
+      <router-link :to="'/search'" class="text-decoration-none">
         <v-btn 
           class="ml-3" 
           close-delay="232" 
@@ -112,7 +112,7 @@
     </v-row>
     <v-divider></v-divider>
     <div class="d-flex justify-center my-6">
-      <router-link :to="'/'">
+      <router-link :to="'/'" class="text-decoration-none">
         <v-btn 
           class="ml-4 white--text" 
           color="indigo lighten-1"
@@ -121,7 +121,7 @@
         </v-btn>
       </router-link>
 
-      <router-link :to="'/active'">
+      <router-link :to="'/active'"  class="text-decoration-none">
         <v-btn 
           class="ml-3 white--text" 
           color="amber lighten-1"
@@ -130,7 +130,7 @@
         </v-btn>
       </router-link>
 
-      <router-link :to="'/done'">
+      <router-link :to="'/done'" class="text-decoration-none">
         <v-btn 
           class="ml-3 white--text" 
           color="light-green"
@@ -152,7 +152,6 @@ export default {
     multiLine: true,
     snackbar: false,
     text: "",
-    timeout: 1000,
   }),
 
   computed: {
@@ -167,6 +166,12 @@ export default {
     },
     items() {
       return this.$store.state.todos;
+    },
+    dateTodos() {
+      return this.$store.getters.dateTodos;
+    },
+    itemTodos() {
+      return this.$store.getters.itemTodos;
     },
   },
 
@@ -183,7 +188,7 @@ export default {
           todo: this.msg,
           data: this.dateFormatted,
           status: false,
-        };
+          };
         this.items.push(incluirTarefa);
         this.msg = "";
         this.text = "ATIVIDADE ADICIONADA";
@@ -203,8 +208,3 @@ export default {
 };
 </script>
 
-<style>
-a:-webkit-any-link {
-  text-decoration: none;
-}
-</style>

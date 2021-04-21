@@ -8,7 +8,7 @@
     <v-list three-line>
       <v-col cols="11">
         <div class="d-flex ml-4 my-4 ">
-          <router-link :to="'/search'">
+          <router-link :to="'/search'" class="text-decoration-none">
             <v-btn
               class="
                   text-center
@@ -99,7 +99,7 @@ export default {
     },
     //Filtrando items
     filteredAndSorted() {
-      // function to compare items
+      // Função para comparar items por data
       function compare(a, b) {
         if (a.data < b.data) return -1;
         if (a.data > b.data) return 1;

@@ -7,7 +7,7 @@
       class="d-flex justify-center" 
       color="indigo darken-1 "
     >
-      <h3>TAREFAS ATIVAS</h3>
+      <h3>TAREFAS REALIZADAS</h3>
     </div>
     <Progress></Progress>
     <v-spacer></v-spacer>
@@ -120,12 +120,6 @@ export default {
     
   },
 
-  watch: {
-    activeTodos(i) {
-      console.log(i);
-    },
-  },
-
   methods: {
     removeItem(item) {
       this.text = `ATIVIDADE EXCLUÍDA`;
@@ -146,4 +140,3 @@ export default {
 };
 </script>
 
-<style></style>

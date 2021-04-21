@@ -19,7 +19,6 @@
       v-model="dialog"
       transition="dialog-top-transition"
       max-width="500"
-      :timeout="timeout"
       
     >
       <v-card color="indigo lighten-1" >

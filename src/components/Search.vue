@@ -14,7 +14,7 @@
                  d-inline-flex
                  "
         >
-          <router-link :to="'/search-data'">
+          <router-link :to="'/search-data'" class="text-decoration-none">
             <v-btn
               class="
                   text-center
