@@ -16,13 +16,14 @@
         >
           <router-link :to="'/search-data'" class="text-decoration-none">
             <v-btn
-              class="
-                  text-center
-                  indigo lighten-1 
-                  white--text"
+              class=" text-center mb-4  white--text"
+              color=" indigo lighten-1 "    
+              small
+              elevation="4"
+              
             >
               <v-icon>mdi-magnify</v-icon>
-              Buscar por data
+              Pesquisar por data
             </v-btn>
           </router-link>
         </div>
@@ -40,12 +41,7 @@
             <v-list-item-content>
               <v-list-item-title>
                 <div
-                  class="
-                      d-inline-flex 
-                      indigo lighten-1 
-                      px-2 py-1 
-                      rounded-pill text-al
-                      text-center"
+                  class="d-inline-flex indigo lighten-1 px-2 py-1 rounded-pill text-altext-center"
                 >
                   <h6 class="white--text font-weight-regular">
                     {{ item.data }}

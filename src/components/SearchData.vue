@@ -2,7 +2,7 @@
   <v-card class="mx-auto" max-width="500">
     <Card></Card>
     <div class="d-flex justify-center" color="indigo darken-1 ">
-      <h3>BUSCA POR DATAS</h3>
+      <h3>BUSCAR POR DATAS</h3>
     </div>
     <Progress></Progress>
     <v-list three-line>
@@ -10,13 +10,14 @@
         <div class="d-flex ml-4 my-4 ">
           <router-link :to="'/search'" class="text-decoration-none">
             <v-btn
-              class="
-                  text-center
-                  indigo lighten-1 
-                  white--text"
+              class=" text-center mb-4  white--text"
+              color=" indigo lighten-1 "    
+              small
+              elevation="4"
+
             >
               <v-icon>mdi-magnify</v-icon>
-              Buscar por Título
+              Pesquisar por Título
             </v-btn>
           </router-link>
         </div>
@@ -31,17 +32,12 @@
         >
         </v-text-field>
 
-        <v-list-item v-for="(item, i) in filteredAndSorted" :key="i">
+        <v-list-item v-for="(item, i) in filtredDates" :key="i">
           <template>
             <v-list-item-content>
               <v-list-item-title>
                 <div
-                  class="
-                      d-inline-flex 
-                      indigo lighten-1 
-                      px-2 py-1 
-                      rounded-pill text-al
-                      text-center"
+                  class="d-inline-flex indigo lighten-1 px-2 py-1 rounded-pill text-altext-center"
                 >
                   <h6 class="white--text font-weight-regular">
                     {{ item.data }}
@@ -49,8 +45,7 @@
                 </div>
 
                 <h3
-                  class="
-                  mt-3 ml-2 font-weight-regular"
+                   class="mt-3 ml-2 font-weight-medium"
                 >
                   {{ item.todo }}
                 </h3>
@@ -98,7 +93,7 @@ export default {
       return this.$store.getters.dateTodos;
     },
     //Filtrando items
-    filteredAndSorted() {
+    filtredDates() {
       // Função para comparar items por data
       function compare(a, b) {
         if (a.data < b.data) return -1;
